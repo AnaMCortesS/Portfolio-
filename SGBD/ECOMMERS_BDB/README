@@ -4,6 +4,16 @@ Proyecto práctico de nivel **básico** enfocado en el enfermedad, construcción
 
 ---
 
+## 📁 Estructura del Repositorio
+
+El proyecto se organiza de forma modular para garantizar un mantenimiento limpio y profesional:
+
+* 📁 `modelado/` ➔ Diagramas Entidad-Relación (`.drawio` y `.png`).
+* 📁 `esquema/` ➔ Scripts SQL de creación de tablas (`CREATE TABLE`) y restricciones para MariaDB.
+* 📁 `consultas/` ➔ Consultas SQL (`JOINs`, agregaciones y métricas de negocio).
+
+---
+
 ## 🧠 Aprendizajes Clave del Proyecto
 
 * **Optimización de Tipos Nativa:** Uso real de `CHAR(32)` para la longitud exacta de los IDs (hashes) y `TINYINT` para dimensiones o notas de reservas, maximizando la eficiencia de la memoria RAM en MariaDB.
