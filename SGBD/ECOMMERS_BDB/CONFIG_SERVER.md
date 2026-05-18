@@ -25,7 +25,7 @@ bind-address            = 0.0.0.0
 
 # Configuración del estándar UTF8MB4 para soporte de caracteres y emojis
 character-set-server  = utf8mb4
-collation-server      = utf8mb4_unicode_ci
+collation-server      = utf8mb4_unicode_ci.
 
 
 ## 🔒 3. Seguridad, Gestión de Usuarios y Cortafuegos
@@ -45,6 +45,7 @@ GRANT ALL PRIVILEGES ON olist_ecommerce.* TO 'root'@'[IP_DE_TU_WINDOWS]' WITH GR
 
 -- Recarga de las tablas de privilegios en la memoria RAM
 FLUSH PRIVILEGES;
+
 
 ## 🛠️ 4. Configuración del Cliente Gráfico (DBeaver en Windows)
 
