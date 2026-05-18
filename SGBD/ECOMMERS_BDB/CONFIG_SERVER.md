@@ -16,14 +16,12 @@ Para poder trabajar con los datos de forma eficiente, se ha desplegado una arqui
 ### Paso 2.1: Habilitar Escucha Remota e Idioma Global
 Para permitir conexiones externas de forma segura y garantizar el soporte correcto de caracteres especiales (tildes, eñes y caracteres portugueses del dataset), se editó el archivo de configuración principal de MariaDB:
 
-
-
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 [mysqld]
-# Permitir que el motor escuche en todas las interfaces de red locales
+### Permitir que el motor escuche en todas las interfaces de red locales
 bind-address            = 0.0.0.0
 
-# Configuración del estándar UTF8MB4 para soporte de caracteres y emojis
+###Configuración del estándar UTF8MB4 para soporte de caracteres y emojis
 character-set-server  = utf8mb4
 collation-server      = utf8mb4_unicode_ci
 
@@ -53,7 +51,7 @@ FLUSH PRIVILEGES;
 Para enlazar la interfaz visual con el servidor Linux de forma exitosa, se optó por utilizar el conector de MySQL debido a su compatibilidad nativa y mayor flexibilidad con los parámetros de seguridad remotos de MariaDB.
 
 ### Paso 4.1: Creación de la Conexión
-1. En DBeaver, hacer clic en **Nueva conexión** y seleccionar el driver de **MySQL** (icono del delfín).
+1. En DBeaver, hacer clic en **Nueva conexión** y seleccionar el driver de **MariaDB**
 2. En la pestaña **Main**, rellenar los datos de acceso:
 
    * **Server Host:** `[IP_DE_TU_LINUX]`
