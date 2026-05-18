@@ -16,7 +16,7 @@ Para poder trabajar con los datos de forma eficiente, se ha desplegado una arqui
 ### Paso 2.1: Habilitar Escucha Remota e Idioma Global
 Para permitir conexiones externas de forma segura y garantizar el soporte correcto de caracteres especiales (tildes, eñes y caracteres portugueses del dataset), se editó el archivo de configuración principal de MariaDB:
 
-```bash
+
 
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 [mysqld]
@@ -25,7 +25,8 @@ bind-address            = 0.0.0.0
 
 # Configuración del estándar UTF8MB4 para soporte de caracteres y emojis
 character-set-server  = utf8mb4
-collation-server      = utf8mb4_unicode_ci.
+collation-server      = utf8mb4_unicode_ci
+
 
 
 ## 🔒 3. Seguridad, Gestión de Usuarios y Cortafuegos
@@ -33,7 +34,7 @@ collation-server      = utf8mb4_unicode_ci.
 ### Paso 3.1: Configuración del Firewall del Sistema (UFW)
 Por defecto, el guardaespaldas interno de Ubuntu bloquea las conexiones entrantes al puerto de la base de datos. Para permitir el acceso exclusivo a la máquina de desarrollo (Windows) sin comprometer la seguridad del servidor, se añade una regla estricta en el cortafuegos:
 
-```bash
+
 sudo ufw allow from [IP_DE_TU_WINDOWS] to any port 3306
 
 ### Paso 3.2: Creación del Usuario en MariaDB
@@ -72,3 +73,4 @@ En la pestaña **Driver Properties**, se agregaron/modificaron las siguientes va
 ### Paso 4.3: Verificación del Enlace
 Hacer clic en el botón **Test Connection...**. DBeaver descargará los binarios del driver necesarios automáticamente. Si la configuración es correcta, el sistema devolverá un estado de éxito (`Connected`), mostrando la versión del motor MariaDB remoto. El entorno queda listo para la ejecución de scripts SQL.
 
+```bash
